@@ -1,3 +1,14 @@
 @tailwind base;
+
+@layer base {
+    h1 {
+        @apply text-[32px] font-semibold mb-6;
+    }
+
+    button {
+        @apply w-1/2 py-6 px-16;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
