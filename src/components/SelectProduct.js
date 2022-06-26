@@ -1,6 +1,33 @@
+import { useState } from "react";
+
 import Product from "./Product";
 
 export default function SelectProduct() {
+  const [product, setProduct] = useState("");
+  const [price, setPrice] = useState("");
+  const [borderProduct1, setBorderProduct1] = useState([
+    "border-[1px]",
+    "border-[#dedede]",
+  ]);
+  const [borderProduct2, setBorderProduct2] = useState([
+    "border-[1px]",
+    "border-[#dedede]",
+  ]);
+
+  function handleClickProduct1() {
+    setProduct("Raptor Carbon 4");
+    setPrice("43,000");
+    setBorderProduct1(["border-[2px]", "border-[#747474]"]);
+    setBorderProduct2(["border-[1px]", "border-[#dedede]"]);
+  }
+
+  function handleClickProduct2() {
+    setProduct("Raptor Metal");
+    setPrice("51,500");
+    setBorderProduct2(["border-[2px]", "border-[#747474]"]);
+    setBorderProduct1(["border-[1px]", "border-[#dedede]"]);
+  }
+
   return (
     <div className="max-w-full flex bg-white">
       <div className="w-full bg-lime-200"></div>
@@ -8,8 +35,18 @@ export default function SelectProduct() {
       <div>
         <div className="mx-16 mt-8">
           <h1>Select Your Bike Model</h1>
-          <Product title={"Raptor Carbon 4"} price={"43,000"} />
-          <Product title={"Raptor Metal"} price={"51,500"} />
+          <Product
+            selectedProduct={handleClickProduct1}
+            title={"Raptor Carbon 4"}
+            price={"43,000"}
+            border={borderProduct1}
+          />
+          <Product
+            selectedProduct={handleClickProduct2}
+            title={"Raptor Metal"}
+            price={"51,500"}
+            border={borderProduct2}
+          />
 
           <div className="mb-16">
             <h1>Select Your Bike Size</h1>
@@ -47,7 +84,7 @@ export default function SelectProduct() {
             />
           </div>
         </div>
-        <button className="bg-[#f5f5f5] text-end">{} Baht</button>
+        <button className="bg-[#f5f5f5] text-end">{price} Baht</button>
         <button className="bg-[#e2e2de] text-start text-[#b9b39d]">Next</button>
       </div>
     </div>

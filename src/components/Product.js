@@ -1,8 +1,13 @@
-export default function Product({ title, price }) {
+export default function Product(props) {
+  const { selectedProduct, title, price, border } = props;
+
   const imageUrl = new URL("../../assets/cat4.png", import.meta.url);
 
   return (
-    <div className="grid grid-cols-[200px_1fr] border-[1px] border-solid border-[#dedede] p-6 mb-16 rounded-md ">
+    <div
+      className={`grid grid-cols-[200px_1fr] ${border[0]} border-solid ${border[1]} p-6 mb-16 rounded-md`}
+      onClick={selectedProduct}
+    >
       <img
         src={imageUrl}
         alt="Rider Bike"
