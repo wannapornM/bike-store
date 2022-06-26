@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Product from "./Product";
 
-export default function SelectProduct() {
-  const [product, setProduct] = useState("");
-  const [price, setPrice] = useState("");
+export default function SelectProductPanel(props) {
+  const { setProductName, price, setPrice, quantity, onChangeQuantity } = props;
+
   const [borderProduct1, setBorderProduct1] = useState([
     "border-[1px]",
     "border-[#dedede]",
@@ -15,15 +16,15 @@ export default function SelectProduct() {
   ]);
 
   function handleClickProduct1() {
-    setProduct("Raptor Carbon 4");
-    setPrice("43,000");
+    setProductName("Raptor Carbon 4");
+    setPrice(parseInt("43,000".replaceAll(",", "")));
     setBorderProduct1(["border-[2px]", "border-[#747474]"]);
     setBorderProduct2(["border-[1px]", "border-[#dedede]"]);
   }
 
   function handleClickProduct2() {
-    setProduct("Raptor Metal");
-    setPrice("51,500");
+    setProductName("Raptor Metal");
+    setPrice(parseInt("51,500".replaceAll(",", "")));
     setBorderProduct2(["border-[2px]", "border-[#747474]"]);
     setBorderProduct1(["border-[1px]", "border-[#dedede]"]);
   }
@@ -78,14 +79,20 @@ export default function SelectProduct() {
             <h1>Quantity</h1>
             <label className="block">Quantity</label>
             <input
-              type="text"
+              type="number"
+              value={quantity}
+              onChange={(e) => onChangeQuantity(e.target.value)}
               placeholder="1"
               className="w-[260px] h-[36px] rounded-[5px] border-[1px] border-solid border-[#e2e1e5] px-2"
             />
           </div>
         </div>
-        <button className="bg-[#f5f5f5] text-end">{price} Baht</button>
-        <button className="bg-[#e2e2de] text-start text-[#b9b39d]">Next</button>
+        <button className="bg-[#f5f5f5] text-end">
+          {price.toString()} Baht
+        </button>
+        <button className="bg-[#e2e2de] text-start text-[#b9b39d]">
+          <Link to="/order-summary">Next</Link>
+        </button>
       </div>
     </div>
   );
