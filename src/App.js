@@ -29,7 +29,7 @@ export default function App() {
           path="/order-summary"
           element={
             <OrderSummaryPanel
-              product={productName}
+              productName={productName}
               price={price}
               quantity={quantity}
             />

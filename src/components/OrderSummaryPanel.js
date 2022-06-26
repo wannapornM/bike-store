@@ -9,63 +9,76 @@ export default function OrderSummaryPanel(props) {
   const totalPriceWithVat = calTotalPrice(vat, price, quantity);
 
   return (
-    <div className="max-w-full flex bg-white">
+    <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
       <div className="w-full bg-lime-200"></div>
 
       <div>
-        <h1>Order Summary</h1>
+        <div className="w-full p-16">
+          <h1>Order Summary</h1>
 
-        <div className="bg-red-300">
-          <img src={imgUrl} alt="Bike" loading="lazy" />
-          <h2>{productName}</h2>
-          <div>
-            The raptor is the outcome of expensive rider input and represents
-            what we believe a trail bike should really be. Wickedly fast,
-            light-weight, equipped with bullet-proof components.
+          <div className="flex mb-24">
+            <img
+              src={imgUrl}
+              alt="Bike"
+              loading="lazy"
+              className="w-1/2 p-4 object-cover"
+            />
+            <div>
+              <h2>{productName}</h2>
+              <div className="mb-16">
+                The raptor is the outcome of expensive rider input and
+                represents what we believe a trail bike should really be.
+                Wickedly fast, light-weight, equipped with bullet-proof
+                components.
+              </div>
+              <div className="grid grid-cols-[1fr_1fr] gap-y-1">
+                <div className="details">Quantity</div>
+                <div className="justify-self-end">{quantity.toString()}</div>
+                <div className="details">Price</div>
+                <div className="justify-self-end">
+                  {totalPriceWithOutVat.toString()}
+                </div>
+                <div className="details">Vat</div>
+                <div className="justify-self-end">{vat.toString()}</div>
+                <div className="details">Total Price</div>
+                <div className="justify-self-end text-lg font-medium">
+                  {totalPriceWithVat.toString()}
+                </div>
+              </div>
+              <hr />
+            </div>
           </div>
-          <div className="grid bg-blue-300">
-            <div className="details">Quantity</div>
-            <div>{quantity.toString()}</div>
-            <div className="details">Price</div>
-            <div>{totalPriceWithOutVat.toString()}</div>
-            <div className="details">Vat</div>
-            <div>{vat.toString()}</div>
-            <div className="details">Total Price</div>
-            <div>{totalPriceWithVat.toString()}</div>
+
+          <div className="mb-16">
+            <h1>Select Your Bike Site</h1>
+            <div className="mb-4">
+              Road bite sizing is argaubly more important than any other type of
+              bicycle. The sizing will be also vary between different
+              manufacturer. <span>Compare Raptor to other brand.</span>
+            </div>
+            <ul className="list-none">
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+                XL
+              </li>
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+                S
+              </li>
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+                M
+              </li>
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+                L
+              </li>
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+                XL
+              </li>
+            </ul>
           </div>
-          <hr />
         </div>
-
-        <div>
-          <h1>Select Your Bike Site</h1>
-          <div className="mb-4">
-            Road bite sizing is argaubly more important than any other type of
-            bicycle. The sizing will be also vary between different
-            manufacturer. <span>Compare Raptor to other brand.</span>
-          </div>
-          <ul className="list-none">
-            <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
-              XL
-            </li>
-            <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
-              S
-            </li>
-            <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
-              M
-            </li>
-            <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
-              L
-            </li>
-            <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
-              XL
-            </li>
-          </ul>
-        </div>
-
         <button className="bg-[#f5f5f5] text-end">
           <Link to="/">Back</Link>
         </button>
-        <button className="bg-[#e2e2de] text-start text-[#b9b39d]">
+        <button className="bg-[#47A000] text-start text-white text-lg font-medium">
           Confirm
         </button>
       </div>

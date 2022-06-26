@@ -5,6 +5,10 @@
         @apply text-[32px] font-semibold mb-6;
     }
 
+    h2 {
+        @apply text-xl font-semibold mb-4;
+    }
+
     button {
         @apply w-1/2 py-6 px-16;
     }
@@ -12,3 +16,9 @@
 
 @tailwind components;
 @tailwind utilities;
+
+.details{
+    font-size: 18px;
+    font-weight: 500;
+    color: #8E8E8E;
+}
