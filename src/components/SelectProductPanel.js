@@ -15,6 +15,9 @@ export default function SelectProductPanel(props) {
     "border-[1px]",
     "border-[#dedede]",
   ]);
+  // const [styleSite, setStyleSite] = useState("notSelectedSite");
+
+  const totalPrice = price * quantity;
 
   function handleClickProduct1() {
     setProductName("Raptor Carbon 4");
@@ -29,6 +32,15 @@ export default function SelectProductPanel(props) {
     setBorderProduct2(["border-[2px]", "border-[#747474]"]);
     setBorderProduct1(["border-[1px]", "border-[#dedede]"]);
   }
+
+  // function handleSiteClick() {
+  //   let style = styleSite;
+  //   if (style == "notSelectSite") {
+  //     setStyleSite("selectedSite");
+  //   } else {
+  //     setStyleSite("notSelectedSite");
+  //   }
+  // }
 
   return (
     <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
@@ -60,19 +72,21 @@ export default function SelectProductPanel(props) {
               manufacturer. <span>Compare Raptor to other brand.</span>
             </div>
             <ul className="list-none">
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mr-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li
+                className={`inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mr-[10px] notSelectedSite`}
+              >
                 XL
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
                 S
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
                 M
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
                 L
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
                 XL
               </li>
             </ul>
@@ -91,7 +105,8 @@ export default function SelectProductPanel(props) {
           </div>
         </div>
         <button className="bg-[#f5f5f5] text-end">
-          <span className="font-medium">{price.toLocaleString()}</span> Baht
+          <span className="font-medium">{totalPrice.toLocaleString()}</span>{" "}
+          Baht
         </button>
         <button className="bg-[#e2e2de] text-start text-[#b9b39d]">
           <Link to="/order-summary">NEXT</Link>

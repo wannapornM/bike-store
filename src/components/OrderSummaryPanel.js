@@ -1,12 +1,26 @@
 import { Link } from "react-router-dom";
 
 export default function OrderSummaryPanel(props) {
-  const { productName, price, quantity } = props;
+  const {
+    productName,
+    price,
+    quantity,
+    setProductName,
+    setPrice,
+    setQuantity,
+  } = props;
+
   const imgUrl = new URL("../../assets/bike1.png", import.meta.url);
 
   const totalPriceWithOutVat = price * quantity;
   const vat = calVat(price, quantity);
   const totalPriceWithVat = calTotalPrice(vat, price, quantity);
+
+  function handleClick() {
+    setProductName("");
+    setPrice(0);
+    setQuantity(0);
+  }
 
   return (
     <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
@@ -76,7 +90,7 @@ export default function OrderSummaryPanel(props) {
             </ul>
           </div>
         </div>
-        <button className="bg-[#f5f5f5] text-end">
+        <button className="bg-[#f5f5f5] text-end" onClick={handleClick}>
           <Link to="/">Back</Link>
         </button>
         <button className="bg-[#47A000] text-start text-white text-lg font-medium">

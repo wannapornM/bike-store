@@ -22,3 +22,15 @@
     font-weight: 500;
     color: #8E8E8E;
 }
+
+.selectedSite {
+    background: #0063BE;
+    border: 1px solid #0063BE;
+    color: white;
+}
+
+.notSelectedSite {
+    background: white;
+    border: 1px solid #d9d9d9;
+    color: black;
+}

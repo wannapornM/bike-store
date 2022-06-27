@@ -32,6 +32,9 @@ export default function App() {
               productName={productName}
               price={price}
               quantity={quantity}
+              setProductName={setProductName}
+              setPrice={setPrice}
+              setQuantity={setQuantity}
             />
           }
         />
