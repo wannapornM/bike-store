@@ -23,7 +23,7 @@ export default function OrderSummaryPanel(props) {
               loading="lazy"
               className="w-1/2 p-4 object-cover"
             />
-            <div>
+            <div className="ml-12">
               <h2>{productName}</h2>
               <div className="mb-16">
                 The raptor is the outcome of expensive rider input and
@@ -31,21 +31,22 @@ export default function OrderSummaryPanel(props) {
                 Wickedly fast, light-weight, equipped with bullet-proof
                 components.
               </div>
-              <div className="grid grid-cols-[1fr_1fr] gap-y-1">
+              <div className="grid grid-cols-[1fr_1fr] gap-y-2">
                 <div className="details">Quantity</div>
                 <div className="justify-self-end">{quantity.toString()}</div>
                 <div className="details">Price</div>
                 <div className="justify-self-end">
-                  {totalPriceWithOutVat.toString()}
+                  {totalPriceWithOutVat.toLocaleString()}
                 </div>
                 <div className="details">Vat</div>
-                <div className="justify-self-end">{vat.toString()}</div>
+                <div className="justify-self-end">{vat.toLocaleString()}</div>
                 <div className="details">Total Price</div>
                 <div className="justify-self-end text-lg font-medium">
-                  {totalPriceWithVat.toString()}
+                  {totalPriceWithVat.toLocaleString()}
                 </div>
               </div>
-              <hr />
+              <hr className="mt-0.5 border-t border-solid border-black" />
+              <hr className="mt-0.5 border-t border-solid border-black" />
             </div>
           </div>
 
@@ -57,7 +58,7 @@ export default function OrderSummaryPanel(props) {
               manufacturer. <span>Compare Raptor to other brand.</span>
             </div>
             <ul className="list-none">
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mr-[10px] border-[1px] border-solid border-[#d9d9d9]">
                 XL
               </li>
               <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">

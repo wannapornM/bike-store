@@ -30,11 +30,11 @@ export default function SelectProductPanel(props) {
   }
 
   return (
-    <div className="max-w-full flex bg-white">
+    <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
       <div className="w-full bg-lime-200"></div>
 
       <div>
-        <div className="mx-16 mt-8">
+        <div className="mx-24 my-16">
           <h1>Select Your Bike Model</h1>
           <Product
             selectedProduct={handleClickProduct1}
@@ -57,7 +57,7 @@ export default function SelectProductPanel(props) {
               manufacturer. <span>Compare Raptor to other brand.</span>
             </div>
             <ul className="list-none">
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mr-[10px] border-[1px] border-solid border-[#d9d9d9]">
                 XL
               </li>
               <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
@@ -75,7 +75,7 @@ export default function SelectProductPanel(props) {
             </ul>
           </div>
 
-          <div className="mb-16">
+          <div className="">
             <h1>Quantity</h1>
             <label className="block">Quantity</label>
             <input
@@ -88,10 +88,10 @@ export default function SelectProductPanel(props) {
           </div>
         </div>
         <button className="bg-[#f5f5f5] text-end">
-          {price.toString()} Baht
+          <span className="font-medium">{price.toLocaleString()}</span> Baht
         </button>
         <button className="bg-[#e2e2de] text-start text-[#b9b39d]">
-          <Link to="/order-summary">Next</Link>
+          <Link to="/order-summary">NEXT</Link>
         </button>
       </div>
     </div>
