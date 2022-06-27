@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
 
 import Product from "./Product";
 
@@ -31,7 +32,9 @@ export default function SelectProductPanel(props) {
 
   return (
     <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
-      <div className="w-full bg-lime-200"></div>
+      <div className="w-full h-full flex justify-center items-center bg-gradient-to-b from-[#EDEDEC] to-[#CECAB4]">
+        {pictureSlider()}
+      </div>
 
       <div>
         <div className="mx-24 my-16">
@@ -94,6 +97,32 @@ export default function SelectProductPanel(props) {
           <Link to="/order-summary">NEXT</Link>
         </button>
       </div>
+    </div>
+  );
+}
+
+function pictureSlider() {
+  const imgUrl1 = new URL("../../assets/bike1.png", import.meta.url);
+  const imgUrl2 = new URL("../../assets/bike2.png", import.meta.url);
+  const imgUrl3 = new URL("../../assets/bike3.png", import.meta.url);
+  const imgUrl4 = new URL("../../assets/bike4.png", import.meta.url);
+
+  var settingStyle = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScoll: 1,
+  };
+
+  return (
+    <div className="w-4/5">
+      <Slider {...settingStyle}>
+        <img src={imgUrl1} alt="Rider Bike" loading="lazy" />
+        <img src={imgUrl2} alt="Rider Bike" loading="lazy" />
+        <img src={imgUrl3} alt="Rider Bike" loading="lazy" />
+        <img src={imgUrl4} alt="Rider Bike" loading="lazy" />
+      </Slider>
     </div>
   );
 }

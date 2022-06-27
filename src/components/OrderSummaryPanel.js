@@ -10,7 +10,7 @@ export default function OrderSummaryPanel(props) {
 
   return (
     <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
-      <div className="w-full bg-lime-200"></div>
+      <div className="w-full bg-gradient-to-b from-[#EDEDEC] to-[#CECAB4]"></div>
 
       <div>
         <div className="w-full p-16">
