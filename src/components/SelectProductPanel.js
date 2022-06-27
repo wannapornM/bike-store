@@ -43,13 +43,13 @@ export default function SelectProductPanel(props) {
   // }
 
   return (
-    <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
-      <div className="w-full h-full flex justify-center items-center bg-gradient-to-b from-[#EDEDEC] to-[#CECAB4]">
+    <div className="max-w-[375px] mx-auto bg-white md:max-w-3xl xl:max-w-7xl xl:grid grid-cols-[40%_1fr]">
+      <div className="w-full h-full flex justify-center items-center mb-8 bg-gradient-to-b from-[#EDEDEC] to-[#CECAB4]">
         {pictureSlider()}
       </div>
 
-      <div>
-        <div className="mx-24 my-16">
+      <div className="max-w-full">
+        <div className="mb-16 px-4 py-8 md:max-w-[85%] md:mx-auto xl:mx-24 xl:my-16 xl:p-0">
           <h1>Select Your Bike Model</h1>
           <Product
             selectedProduct={handleClickProduct1}

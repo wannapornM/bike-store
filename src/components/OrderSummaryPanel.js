@@ -23,23 +23,23 @@ export default function OrderSummaryPanel(props) {
   }
 
   return (
-    <div className="max-w-full grid grid-cols-[40%_1fr] bg-white">
+    <div className="mx-auto max-w-[375px] md:max-w-3xl xl:max-w-7xl xl:grid grid-cols-[40%_1fr] bg-white">
       <div className="w-full bg-gradient-to-b from-[#EDEDEC] to-[#CECAB4]"></div>
 
       <div>
-        <div className="w-full p-16">
+        <div className="w-full pt-8 pb-16 px-8 md:w-4/5 md:mx-auto md:mt-16 md:mb-24 md:p-0">
           <h1>Order Summary</h1>
 
-          <div className="flex mb-24">
+          <div className="w-full flex flex-wrap content-center md:w-[90%] md:grid md:grid-cols-[250px_1fr] md:mt-0 md:mb-24 md:mx-auto xl:w-full mb-24">
             <img
               src={imgUrl}
               alt="Bike"
               loading="lazy"
-              className="w-1/2 p-4 object-cover"
+              className="w-[90%] h-[200px] mb-6 md:p-4 object-cover md:w-full"
             />
-            <div className="ml-12">
+            <div className="md:ml-16">
               <h2>{productName}</h2>
-              <div className="mb-16">
+              <div className="mb-16 md:mb-24">
                 The raptor is the outcome of expensive rider input and
                 represents what we believe a trail bike should really be.
                 Wickedly fast, light-weight, equipped with bullet-proof
@@ -64,7 +64,7 @@ export default function OrderSummaryPanel(props) {
             </div>
           </div>
 
-          <div className="mb-16">
+          <div className="">
             <h1>Select Your Bike Site</h1>
             <div className="mb-4">
               Road bite sizing is argaubly more important than any other type of

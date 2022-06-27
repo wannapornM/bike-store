@@ -5,16 +5,16 @@ export default function Product(props) {
 
   return (
     <div
-      className={`grid grid-cols-[200px_1fr] ${border[0]} border-solid ${border[1]} p-6 mb-16 rounded-md`}
+      className={`p-3 xl:grid-cols-[200px_1fr] ${border[0]} border-solid ${border[1]} mb-16 rounded-md md:grid md:grid-cols-[250px_1fr] md:items-center`}
       onClick={selectedProduct}
     >
       <img
         src={imageUrl}
         alt="Rider Bike"
-        className="w-full h-[140px] object-cover self-center"
+        className="mb-4 w-full h-[140px] object-cover self-center md:mb-0"
       />
-      <div className="px-8">
-        <div className="flex justify-between mb-4">
+      <div className="md:pl-8">
+        <div className="flex justify-between items-end mb-4">
           <div className="text-xl font-semibold">{title}</div>
           <div>From {price} Baht</div>
         </div>
