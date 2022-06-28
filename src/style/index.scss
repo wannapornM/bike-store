@@ -23,16 +23,31 @@
     color: #8E8E8E;
 }
 
-.selectedSite {
-    background: #0063BE;
-    border: 1px solid #0063BE;
-    color: white;
+.notClicked {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 1px solid #d9d9d9;
+    cursor: pointer;
 }
 
-.notSelectedSite {
-    background: white;
-    border: 1px solid #d9d9d9;
-    color: black;
+.clicked {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: #0063BE;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 1px solid #0063BE;
+    color: white;
+    cursor: pointer;
 }
 
 body {

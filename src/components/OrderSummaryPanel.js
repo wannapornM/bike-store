@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import changeSiteClass from "../utils/changeSiteClass";
+
 export default function OrderSummaryPanel(props) {
   const {
     productName,
@@ -72,19 +74,39 @@ export default function OrderSummaryPanel(props) {
               manufacturer. <span>Compare Raptor to other brand.</span>
             </div>
             <ul className="list-none">
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mr-[10px] border-[1px] border-solid border-[#d9d9d9]">
-                XL
+              <li
+                className="notClicked"
+                id="bikeSiteItemXS"
+                onClick={() => changeSiteClass("bikeSiteItemXS")}
+              >
+                XS
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li
+                className="notClicked"
+                id="bikeSiteItemS"
+                onClick={() => changeSiteClass("bikeSiteItemS")}
+              >
                 S
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li
+                className="notClicked"
+                id="bikeSiteItemM"
+                onClick={() => changeSiteClass("bikeSiteItemM")}
+              >
                 M
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li
+                className="notClicked"
+                id="bikeSiteItemL"
+                onClick={() => changeSiteClass("bikeSiteItemL")}
+              >
                 L
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] bg-white rounded-full mx-[10px] border-[1px] border-solid border-[#d9d9d9]">
+              <li
+                className="notClicked"
+                id="bikeSiteItemXL"
+                onClick={() => changeSiteClass("bikeSiteItemXL")}
+              >
                 XL
               </li>
             </ul>

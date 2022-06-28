@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 import Product from "./Product";
+import changeSiteClass from "../utils/changeSiteClass";
 
 export default function SelectProductPanel(props) {
   const { setProductName, price, setPrice, quantity, onChangeQuantity } = props;
+
+  const totalPrice = price * quantity;
 
   const [borderProduct1, setBorderProduct1] = useState([
     "border-[1px]",
@@ -15,9 +18,6 @@ export default function SelectProductPanel(props) {
     "border-[1px]",
     "border-[#dedede]",
   ]);
-  // const [styleSite, setStyleSite] = useState("notSelectedSite");
-
-  const totalPrice = price * quantity;
 
   function handleClickProduct1() {
     setProductName("Raptor Carbon 4");
@@ -32,15 +32,6 @@ export default function SelectProductPanel(props) {
     setBorderProduct2(["border-[2px]", "border-[#747474]"]);
     setBorderProduct1(["border-[1px]", "border-[#dedede]"]);
   }
-
-  // function handleSiteClick() {
-  //   let style = styleSite;
-  //   if (style == "notSelectSite") {
-  //     setStyleSite("selectedSite");
-  //   } else {
-  //     setStyleSite("notSelectedSite");
-  //   }
-  // }
 
   return (
     <div className="max-w-[375px] mx-auto bg-white md:max-w-3xl xl:max-w-7xl xl:grid grid-cols-[40%_1fr]">
@@ -73,20 +64,38 @@ export default function SelectProductPanel(props) {
             </div>
             <ul className="list-none">
               <li
-                className={`inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mr-[10px] notSelectedSite`}
+                className="notClicked"
+                id="bikeSiteItemXS"
+                onClick={() => changeSiteClass("bikeSiteItemXS")}
               >
-                XL
+                XS
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
+              <li
+                className="notClicked"
+                id="bikeSiteItemS"
+                onClick={() => changeSiteClass("bikeSiteItemS")}
+              >
                 S
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
+              <li
+                className="notClicked"
+                id="bikeSiteItemM"
+                onClick={() => changeSiteClass("bikeSiteItemM")}
+              >
                 M
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
+              <li
+                className="notClicked"
+                id="bikeSiteItemL"
+                onClick={() => changeSiteClass("bikeSiteItemL")}
+              >
                 L
               </li>
-              <li className="inline-flex justify-center items-center w-[35px] h-[35px] rounded-full mx-[10px] notSelectedSite">
+              <li
+                className="notClicked"
+                id="bikeSiteItemXL"
+                onClick={() => changeSiteClass("bikeSiteItemXL")}
+              >
                 XL
               </li>
             </ul>
