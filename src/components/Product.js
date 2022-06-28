@@ -1,7 +1,7 @@
 export default function Product(props) {
   const { selectedProduct, title, price, border } = props;
 
-  const imageUrl = new URL("../../assets/cat4.png", import.meta.url);
+  const imageUrl = new URL("../../assets/bicycle2.png", import.meta.url);
 
   return (
     <div

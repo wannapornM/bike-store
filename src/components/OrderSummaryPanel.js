@@ -12,7 +12,7 @@ export default function OrderSummaryPanel(props) {
     setQuantity,
   } = props;
 
-  const imgUrl = new URL("../../assets/bike1.png", import.meta.url);
+  const imgUrl = new URL("../../assets/bicycle2.png", import.meta.url);
 
   const totalPriceWithOutVat = price * quantity;
   const vat = calVat(price, quantity);

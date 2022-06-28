@@ -142,10 +142,8 @@ export default function SelectProductPanel(props) {
 }
 
 function pictureSlider() {
-  const imgUrl1 = new URL("../../assets/bike1.png", import.meta.url);
-  const imgUrl2 = new URL("../../assets/bike2.png", import.meta.url);
-  const imgUrl3 = new URL("../../assets/bike3.png", import.meta.url);
-  const imgUrl4 = new URL("../../assets/bike4.png", import.meta.url);
+  const imgUrl1 = new URL("../../assets/bicycle1.png", import.meta.url);
+  const imgUrl2 = new URL("../../assets/bicycle2.png", import.meta.url);
 
   var settingStyle = {
     dots: true,
@@ -160,8 +158,6 @@ function pictureSlider() {
       <Slider {...settingStyle}>
         <img src={imgUrl1} alt="Rider Bike" loading="lazy" />
         <img src={imgUrl2} alt="Rider Bike" loading="lazy" />
-        <img src={imgUrl3} alt="Rider Bike" loading="lazy" />
-        <img src={imgUrl4} alt="Rider Bike" loading="lazy" />
       </Slider>
     </div>
   );
