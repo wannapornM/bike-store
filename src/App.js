@@ -16,6 +16,7 @@ export default function App() {
           path="/"
           element={
             <SelectProductPanel
+              productName={productName}
               setProductName={setProductName}
               price={price}
               setPrice={setPrice}

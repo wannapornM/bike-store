@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
@@ -6,10 +6,18 @@ import Product from "./Product";
 import changeSiteClass from "../utils/changeSiteClass";
 
 export default function SelectProductPanel(props) {
-  const { setProductName, price, setPrice, quantity, onChangeQuantity } = props;
+  const {
+    productName,
+    setProductName,
+    price,
+    setPrice,
+    quantity,
+    onChangeQuantity,
+  } = props;
 
   const totalPrice = price * quantity;
 
+  const [btndisabled, setDisabled] = useState("pointer-events-none");
   const [borderProduct1, setBorderProduct1] = useState([
     "border-[1px]",
     "border-[#dedede]",
@@ -32,6 +40,12 @@ export default function SelectProductPanel(props) {
     setBorderProduct2(["border-[2px]", "border-[#747474]"]);
     setBorderProduct1(["border-[1px]", "border-[#dedede]"]);
   }
+
+  useEffect(() => {
+    productName === "" || quantity === 0
+      ? setDisabled("pointer-events-none")
+      : setDisabled("pointer-events-auto");
+  }, [productName, quantity]);
 
   return (
     <div className="max-w-[375px] mx-auto bg-white md:max-w-3xl xl:max-w-7xl xl:grid grid-cols-[40%_1fr]">
@@ -118,7 +132,9 @@ export default function SelectProductPanel(props) {
           Baht
         </button>
         <button className="bg-[#e2e2de] text-start text-[#b9b39d]">
-          <Link to="/order-summary">NEXT</Link>
+          <Link to="/order-summary" className={btndisabled}>
+            NEXT
+          </Link>
         </button>
       </div>
     </div>
